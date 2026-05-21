@@ -1,7 +1,7 @@
 {
   "kdna_spec": "1.0",
   "name": "@aikdna/decision_state",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "language": "en",
   "languages": [
     "en"
@@ -14,7 +14,8 @@
   "author": {
     "name": "KDNA Team",
     "id": "kdna-team",
-    "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
+    "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe",
+    "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEABYTSKqskFWFgPEykI648/YlhENQJkIZ6bQ6HcznYzKc=\n-----END PUBLIC KEY-----\n"
   },
   "license": {
     "type": "CC-BY-4.0",
@@ -27,5 +28,5 @@
   "registry": {},
   "file_count": 2,
   "spec_version": "1.0-rc",
-  "signature": "ed25519:66cebfb21f20d2f124bbda2b41091b7e2c261e637f80c8304a4861b293a411912706ee3817354c5f9797191a05ad0ccef82bb4a48279ee656061196795183c02"
+  "signature": "ed25519:90a8d35d8825c3541ba51d56975d574bc1f46e7f09322f2db001063043d1274a54ae097463fca6008b2a129051b5dea0b2e5204fcd0b7f71f038fe8197634501"
 }
