@@ -8,13 +8,13 @@
   },
   "axioms": [
     {
-      "id": "AX-001",
+      "id": "ax-discussion-not-decision",
       "one_sentence": "Discussion is not decision. Broad agreement is not commitment.",
       "full_statement": "A team can discuss a topic thoroughly, express consensus, and still produce zero actionable output. A decision exists only when a specific choice, named owner, concrete next action, and deadline are all explicit. Everything short of this is discussion — valuable, but not executable.",
       "why": "AI agents that treat well-summarized discussion as a decision will generate action items for things that were never actually decided. This creates busy work with no real progress."
     },
     {
-      "id": "AX-002",
+      "id": "ax-absence-not-commitment",
       "one_sentence": "The absence of objection is not the presence of commitment.",
       "full_statement": "Silence or 'sounds good' in a meeting does not equal commitment. Commitment requires explicit acknowledgment of responsibility by a named person. Without a named owner, even the most detailed plan is just a suggestion.",
       "why": "Teams often leave meetings feeling aligned when in reality no one has accepted ownership. The AI must distinguish between social agreement and operational commitment."
@@ -66,7 +66,7 @@
   ],
   "frameworks": [
     {
-      "id": "FW-001",
+      "id": "fw-decision-state-detect",
       "name": "Decision State Detection",
       "when_to_use": "When analyzing any meeting transcript, project update, or team discussion for actionability.",
       "steps": [
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "id": "FW-002",
+      "id": "fw-deferral-validation",
       "name": "Deferral Validation",
       "when_to_use": "When a meeting concludes with 'we need more information' or 'let's revisit this.' Distinguish intentional deferral from avoidance.",
       "steps": [
@@ -87,11 +87,11 @@
         "Check: when exactly will the decision be revisited? (No date = UNRESOLVED)",
         "Check: who will make the decision at that time? (No owner = UNRESOLVED)",
         "Check: what interim action will be taken, if any?",
-        "If all three are explicit, classify as INTENTIONAL_DEFERRAL. If any is missing, classify as UNRESOLVED."
+        "If all four are explicit, classify as INTENTIONAL_DEFERRAL. If any is missing, classify as UNRESOLVED."
       ]
     },
     {
-      "id": "FW-003",
+      "id": "fw-condition-specificity",
       "name": "Condition Specificity Test",
       "when_to_use": "When action items include 'pending', 'subject to', or 'once we get' language.",
       "steps": [
@@ -121,8 +121,9 @@
     }
   ],
   "stances": [
-    "A well-summarized meeting with no decisions is still a meeting with no decisions.",
-    "The AI's job is not to make the meeting sound productive. It is to identify whether the meeting produced actionability.",
-    "Saying 'this meeting did not produce a decision' is a valuable judgment. It is not a criticism."
+    "Default to UNRESOLVED when any of the four commitment elements (choice, owner, action, timing) is missing.",
+    "Reject the assumption that a well-summarized meeting is a productive meeting. Check structural output, not narrative quality.",
+    "Report UNRESOLVED explicitly rather than generating action items for undecided topics.",
+    "Prefer EXECUTABLE_DECISION only when the owner has explicitly accepted the commitment."
   ]
 }

@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "version": "0.4",
+    "domain": "decision_state",
+    "created": "2026-05-21",
+    "purpose": "Scenario signals that trigger specific decision-state judgment orientation.",
+    "load_condition": "Load when scenario signals match the input context."
+  },
+  "scenes": [
+    {
+      "name": "meeting_summary",
+      "trigger_signal": "Meeting transcript or summary includes discussion of options, next steps, or action items.",
+      "orientation": "Classify decision state. Check for all four commitment elements."
+    },
+    {
+      "name": "ambiguous_deferral",
+      "trigger_signal": "Meeting ends with phrases like 'we need more information', 'let us revisit', 'TBD' without specific conditions, dates, or owners.",
+      "orientation": "Distinguish INTENTIONAL_DEFERRAL from UNRESOLVED. If deferral lacks explicit conditions, it is UNRESOLVED."
+    },
+    {
+      "name": "social_alignment",
+      "trigger_signal": "Meeting language focuses on agreement ('everyone on board', 'sounds good', 'the team aligned') without structural commitment.",
+      "orientation": "Flag social agreement masquerading as commitment. Check for named owners and explicit actions."
+    },
+    {
+      "name": "conditional_action",
+      "trigger_signal": "Action items include 'pending', 'subject to', 'once we get', or 'if approved' language.",
+      "orientation": "Apply Condition Specificity Test. Vague conditions without verification plan = UNRESOLVED."
+    }
+  ]
+}
