@@ -11,13 +11,49 @@
       "id": "ax-discussion-not-decision",
       "one_sentence": "Discussion is not decision. Broad agreement is not commitment.",
       "full_statement": "A team can discuss a topic thoroughly, express consensus, and still produce zero actionable output. A decision exists only when a specific choice, named owner, concrete next action, and deadline are all explicit. Everything short of this is discussion — valuable, but not executable.",
-      "why": "AI agents that treat well-summarized discussion as a decision will generate action items for things that were never actually decided. This creates busy work with no real progress."
+      "why": "AI agents that treat well-summarized discussion as a decision will generate action items for things that were never actually decided. This creates busy work with no real progress.",
+      "applies_when": [
+        "Brainstorming sessions exploring multiple product features without selecting a final direction",
+        "Post-incident reviews identifying root causes but not assigning remediation tasks",
+        "Slack threads debating API design trade-offs with no final sign-off or timeline",
+        "All-hands meetings sharing company metrics where no follow-up work is mandated"
+      ],
+      "does_not_apply_when": [
+        "Async approval workflows where a designated approver posts a single explicit 'Approved' comment to trigger execution",
+        "Emergency incident response channels operating under pre-defined authority protocols that auto-assign next steps",
+        "Routine daily stand-ups discussing progress on tasks already committed during sprint planning",
+        "Automated deployment pipelines generating build steps based on commit hooks without human deliberation"
+      ],
+      "failure_risk": "The agent will generate spurious action items and assign false accountability for exploratory conversations, creating busy work and eroding team trust.",
+      "confidence": "high",
+      "evidence_type": [
+        "practice_pattern",
+        "industry_consensus"
+      ]
     },
     {
       "id": "ax-absence-not-commitment",
       "one_sentence": "The absence of objection is not the presence of commitment.",
       "full_statement": "Silence or 'sounds good' in a meeting does not equal commitment. Commitment requires explicit acknowledgment of responsibility by a named person. Without a named owner, even the most detailed plan is just a suggestion.",
-      "why": "Teams often leave meetings feeling aligned when in reality no one has accepted ownership. The AI must distinguish between social agreement and operational commitment."
+      "why": "Teams often leave meetings feeling aligned when in reality no one has accepted ownership. The AI must distinguish between social agreement and operational commitment.",
+      "applies_when": [
+        "Cross-functional alignment calls where departments agree on high-level goals but no one claims specific deliverables",
+        "Architecture review meetings where stakeholders nod through proposals without naming an implementer",
+        "CC-heavy email threads discussing project milestones with no explicit acceptance of responsibility",
+        "Strategy offsites that produce detailed roadmaps but leave task ownership vague"
+      ],
+      "does_not_apply_when": [
+        "Formal RFC processes with a documented review window where silence explicitly constitutes approval per team policy",
+        "On-call rotation handoffs where the incoming engineer implicitly accepts system responsibility by accepting the shift",
+        "Legal or compliance workflows governed by regulatory clauses where failure to object within a timeframe triggers automatic consent",
+        "Sprint commitment ceremonies where developers pull pre-estimated tickets into their active column"
+      ],
+      "failure_risk": "The agent will falsely attribute task ownership to passive listeners, causing missed deadlines when work falls through unclaimed gaps.",
+      "confidence": "high",
+      "evidence_type": [
+        "case_observation",
+        "industry_consensus"
+      ]
     }
   ],
   "ontology": [

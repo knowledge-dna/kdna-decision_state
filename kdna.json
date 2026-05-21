@@ -1,7 +1,7 @@
 {
   "kdna_spec": "1.0",
   "name": "@aikdna/decision_state",
-  "version": "0.7.1",
+  "version": "0.7.5",
   "language": "en",
   "languages": [
     "en"
@@ -28,5 +28,6 @@
   "registry": {},
   "file_count": 2,
   "spec_version": "1.0-rc",
-  "signature": "ed25519:90a8d35d8825c3541ba51d56975d574bc1f46e7f09322f2db001063043d1274a54ae097463fca6008b2a129051b5dea0b2e5204fcd0b7f71f038fe8197634501"
+  "judgment_version": "2026.05",
+  "signature": "ed25519:4fd02d46f968729b44772aed1d781bc76166bbde6eb513705c2874fc1d0bab340da139281fe19baa48232da56cd512aee28f7902e4feace1566b9d6a6131c206"
 }
