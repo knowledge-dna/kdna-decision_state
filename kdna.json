@@ -1,7 +1,7 @@
 {
-  "kdna_spec": "0.2",
-  "name": "decision_state",
-  "version": "0.4.0",
+  "kdna_spec": "1.0",
+  "name": "@aikdna/decision_state",
+  "version": "0.7.0",
   "language": "en",
   "languages": [
     "en"
@@ -12,8 +12,9 @@
   "keywords": [],
   "access": "open",
   "author": {
-    "name": "",
-    "id": ""
+    "name": "KDNA Team",
+    "id": "kdna-team",
+    "pubkey": "ed25519:43d22af8f0e189b6fd42bfaab710f52f4bc5f0ae3f5e04719a1a1d9ce9760fbe"
   },
   "license": {
     "type": "CC-BY-4.0",
@@ -25,5 +26,6 @@
   "status": "experimental",
   "registry": {},
   "file_count": 2,
-  "spec_version": "1.0-rc"
+  "spec_version": "1.0-rc",
+  "signature": "ed25519:66cebfb21f20d2f124bbda2b41091b7e2c261e637f80c8304a4861b293a411912706ee3817354c5f9797191a05ad0ccef82bb4a48279ee656061196795183c02"
 }
