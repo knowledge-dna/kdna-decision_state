@@ -41,6 +41,19 @@ This KDNA helps agents diagnose **decision state** in:
 - the user is asking for a narrative summary without decision assessment
 - the discussion is intentionally open-ended exploration (early-stage research, creative ideation)
 
+## Top Axioms
+
+1. **Discussion is not decision. Broad agreement is not commitment.** (`ax-discussion-not-decision`)
+2. **The absence of objection is not the presence of commitment.** (`ax-absence-not-commitment`)
+
+## Top Misunderstandings
+
+| Misunderstanding | Correction |
+|---|---|
+| Social agreement = commitment | Productivity is measured by operational commitment produced, not by positive sentiment. |
+| Action items listed = decisions made | Action items without owners, deadlines, or connection to specific decisions are a to-do list, not evidence of decision-making. |
+| "We need more data" = valid deferral | Deferral is only valid when structured: what data, by when, who decides, and what interim action. |
+
 ## Known Failure Risks
 
 | Risk | When it shows up |
@@ -49,6 +62,10 @@ This KDNA helps agents diagnose **decision state** in:
 | Treating vague conditional language as decided | "Pending approval" without named approver or criteria |
 | Misclassifying conditional as executable | Owner named but lacks authority or resources |
 | Over-rigid structural checking | Relationship-building meetings where no decision was the goal |
+
+## Eval Score
+
+`quality_badge: tested` — 10 standardized eval cases covering classification accuracy, false positive rate, missing element identification, and recommendation specificity. Conforms to `schema/eval.schema.json`.
 
 ## Decision State Taxonomy
 
