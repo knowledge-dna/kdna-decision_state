@@ -29,5 +29,6 @@
   "file_count": 2,
   "spec_version": "1.0-rc",
   "judgment_version": "2026.05",
-  "signature": "ed25519:4fd02d46f968729b44772aed1d781bc76166bbde6eb513705c2874fc1d0bab340da139281fe19baa48232da56cd512aee28f7902e4feace1566b9d6a6131c206"
+  "signature": "ed25519:4fd02d46f968729b44772aed1d781bc76166bbde6eb513705c2874fc1d0bab340da139281fe19baa48232da56cd512aee28f7902e4feace1566b9d6a6131c206",
+  "quality_badge": "validated"
 }
