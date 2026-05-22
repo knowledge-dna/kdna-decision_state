@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "version": "1.0-rc",
+    "domain": "decision_state",
+    "created": "2026-05-22",
+    "purpose": "Evolution stages for decision state judgment capability.",
+    "load_condition": "Load when practice or measurement is requested."
+  },
+  "stages": [
+    {
+      "id": "stg-001",
+      "name": "meeting summarizer",
+      "description": "Records what was discussed without assessing whether decisions were made. Output is a narrative summary.",
+      "indicators": [
+        "Output lists topics discussed in chronological order",
+        "No classification of decision state",
+        "Action items are copied verbatim without verifying ownership or timing"
+      ]
+    },
+    {
+      "id": "stg-002",
+      "name": "action item extractor",
+      "description": "Identifies tasks and to-do lists from meetings but does not verify if they stem from actual decisions. Output is a bulleted task list.",
+      "indicators": [
+        "Output lists tasks mentioned in the meeting",
+        "Tasks may lack owners or deadlines",
+        "No distinction between discussed ideas and committed actions"
+      ]
+    },
+    {
+      "id": "stg-003",
+      "name": "decision state classifier",
+      "description": "Applies the four-element test to classify output as UNRESOLVED, CONDITIONAL, INTENTIONAL_DEFERRAL, or EXECUTABLE_DECISION. Output includes classification and missing elements.",
+      "indicators": [
+        "Output explicitly states decision state using domain taxonomy",
+        "Missing commitment elements are named specifically",
+        "Social agreement is distinguished from operational commitment"
+      ]
+    },
+    {
+      "id": "stg-004",
+      "name": "commitment validator",
+      "description": "Not only classifies decision state but also validates owner authority, condition specificity, and contingency completeness. Output includes recommendations to upgrade the decision state.",
+      "indicators": [
+        "Authority and resource checks are performed on EXECUTABLE_DECISION claims",
+        "CONDITIONAL decisions are tested for condition specificity and verifier ownership",
+        "INTENTIONAL_DEFERRAL is validated against all four deferral elements",
+        "Recommendations are specific enough to act on immediately"
+      ]
+    }
+  ],
+  "evolution_layers": [
+    {
+      "id": "layer-001",
+      "name": "from summarizer to extractor",
+      "capability": "Move from narrative output to structured task lists",
+      "from_stage": "stg-001",
+      "to_stage": "stg-002"
+    },
+    {
+      "id": "layer-002",
+      "name": "from extractor to classifier",
+      "capability": "Move from task lists to decision state taxonomy",
+      "from_stage": "stg-002",
+      "to_stage": "stg-003"
+    },
+    {
+      "id": "layer-003",
+      "name": "from classifier to validator",
+      "capability": "Move from classification to actionable validation with recommendations",
+      "from_stage": "stg-003",
+      "to_stage": "stg-004"
+    }
+  ],
+  "measurement": [
+    {
+      "id": "meas-001",
+      "what": "Classification accuracy",
+      "how": "Percentage of meetings correctly classified against expert-labeled ground truth",
+      "threshold": ">= 85% on 30+ cases"
+    },
+    {
+      "id": "meas-002",
+      "what": "False positive rate (social agreement → commitment)",
+      "how": "Percentage of UNRESOLVED meetings incorrectly classified as CONDITIONAL or EXECUTABLE",
+      "threshold": "<= 5%"
+    },
+    {
+      "id": "meas-003",
+      "what": "Missing element identification rate",
+      "how": "When classifying UNRESOLVED, does the agent correctly name which elements are missing?",
+      "threshold": ">= 90%"
+    },
+    {
+      "id": "meas-004",
+      "what": "Recommendation specificity",
+      "how": "Are recommendations specific enough that a human can act on them without clarification?",
+      "threshold": ">= 80% judged specific by independent reviewers"
+    }
+  ]
+}

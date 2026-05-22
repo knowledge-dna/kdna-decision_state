@@ -1,0 +1,20 @@
+{
+  "id": "eval-001",
+  "domain": "@aikdna/decision_state",
+  "input": "Meeting summary: The team discussed the Q3 roadmap. Everyone was on board with the priorities. The session ended with positive energy and alignment on direction.",
+  "expected_classification": "UNRESOLVED",
+  "expected_axioms": [
+    "ax-discussion-not-decision",
+    "ax-absence-not-commitment"
+  ],
+  "expected_misunderstandings_avoided": [
+    "ms-social-agreement-not-commitment"
+  ],
+  "expected_banned_terms_avoided": [
+    "the team agreed to",
+    "everyone was on board with"
+  ],
+  "output_rubric": "Must classify as UNRESOLVED. Must identify missing commitment elements (no named owner, no specific action, no deadline). Must flag that social agreement is not operational commitment.",
+  "pass": null,
+  "evidence": "Classic social-agreement case. No four commitment elements present."
+}

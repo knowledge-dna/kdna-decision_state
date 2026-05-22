@@ -1,0 +1,14 @@
+{
+  "id": "eval-008",
+  "domain": "@aikdna/decision_state",
+  "input": "Decision record: Migrate database to PostgreSQL 16. Owner: Senior DBA Maria. Start date: Monday 9am. Deadline: Friday 5pm. No conditions. Maria confirmed she has admin access and the maintenance window is approved.",
+  "expected_classification": "EXECUTABLE_DECISION",
+  "expected_axioms": [
+    "ax-absence-not-commitment"
+  ],
+  "expected_misunderstandings_avoided": [],
+  "expected_banned_terms_avoided": [],
+  "output_rubric": "Must classify as EXECUTABLE_DECISION. Must verify all four commitment elements are present. Must confirm owner has authority and resources. No conditions or blockers remain.",
+  "pass": null,
+  "evidence": "True executable decision. All four elements plus authority and resource confirmation."
+}

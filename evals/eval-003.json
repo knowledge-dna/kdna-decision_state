@@ -1,0 +1,19 @@
+{
+  "id": "eval-003",
+  "domain": "@aikdna/decision_state",
+  "input": "Meeting transcript: 'We need more data before deciding on the vendor. Let's revisit this later.' No date, no owner for data collection, no criteria specified.",
+  "expected_classification": "UNRESOLVED",
+  "expected_axioms": [
+    "ax-discussion-not-decision"
+  ],
+  "expected_misunderstandings_avoided": [
+    "MS-003"
+  ],
+  "expected_banned_terms_avoided": [
+    "we'll figure it out",
+    "we'll circle back"
+  ],
+  "output_rubric": "Must classify as UNRESOLVED, not INTENTIONAL_DEFERRAL. Must identify that vague deferral without condition, date, or owner is avoidance, not strategy.",
+  "pass": null,
+  "evidence": "Vague-deferral case. All four deferral elements are missing."
+}

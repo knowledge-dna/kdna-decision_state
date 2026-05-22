@@ -1,0 +1,14 @@
+{
+  "id": "eval-005",
+  "domain": "@aikdna/decision_state",
+  "input": "Decision log: Deploy v2.0 to production. Owner: DevOps team (Alex). Date: Friday 2pm. Condition: staging tests must pass. Verifier: Alex will check staging dashboard at 1pm. Contingency: if tests fail, deployment moves to next Tuesday.",
+  "expected_classification": "CONDITIONAL",
+  "expected_axioms": [
+    "ax-discussion-not-decision"
+  ],
+  "expected_misunderstandings_avoided": [],
+  "expected_banned_terms_avoided": [],
+  "output_rubric": "Must classify as CONDITIONAL. Must acknowledge all four commitment elements are present. Must note the external condition (staging tests) and verify that condition specificity test passes.",
+  "pass": null,
+  "evidence": "Proper conditional decision. All four elements present plus explicit condition, verifier, and contingency."
+}

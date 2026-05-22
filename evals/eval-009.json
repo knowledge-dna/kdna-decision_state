@@ -1,0 +1,14 @@
+{
+  "id": "eval-009",
+  "domain": "@aikdna/decision_state",
+  "input": "Meeting output: Redesign the checkout flow. Owner: Junior UX Designer Tom. Deadline: End of month. Tom accepted. However, checkout changes require VP Engineering approval per company policy, and Tom does not have that authority.",
+  "expected_classification": "CONDITIONAL",
+  "expected_axioms": [
+    "ax-absence-not-commitment"
+  ],
+  "expected_misunderstandings_avoided": [],
+  "expected_banned_terms_avoided": [],
+  "output_rubric": "Must classify as CONDITIONAL, not EXECUTABLE. Must identify that the owner lacks authority for checkout changes. Must flag the missing VP Engineering approval as the blocking condition.",
+  "pass": null,
+  "evidence": "Misclassified-executable case. Four elements present but owner lacks authority. Should be CONDITIONAL."
+}

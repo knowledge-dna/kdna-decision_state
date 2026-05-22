@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "version": "1.0-rc",
+    "domain": "decision_state",
+    "created": "2026-05-22",
+    "purpose": "Reasoning chains that explain how decision state judgment operates.",
+    "load_condition": "Load when rationale or principles behind decision state classification are requested."
+  },
+  "reasoning_chains": [
+    {
+      "id": "rc-why-discussion-is-not-decision",
+      "one_sentence": "Discussion is not decision because the four commitment elements are structural, not social.",
+      "logic": [
+        "A decision is defined by four structural elements: specific choice, named owner, concrete action, and deadline.",
+        "Discussion can produce understanding, alignment, and agreement without producing any of these four elements.",
+        "Social signals (enthusiasm, nodding, 'sounds good') are emotional states, not structural states.",
+        "Therefore: a meeting can feel productive while being structurally unproductive.",
+        "The agent must check structure first and sentiment second — or not at all."
+      ],
+      "so_what": "If an agent evaluates meetings by sentiment or summary quality, it will rate unproductive meetings as successful. This creates false confidence and masks decision gaps.",
+      "tradeoffs": "Strict structural checking can feel cold or overly critical. Some teams value relationship-building meetings that intentionally produce no decisions. The agent must respect these boundaries (see does_not_apply_when on ax-discussion-not-decision).",
+      "conflict_resolution": "When a user asks 'was this a good meeting?' the agent should first ask: 'are you evaluating relationship outcomes or decision outcomes?' If both, report them separately. Do not average them.",
+      "when_not_to_use": "Do not apply this reasoning to team-building sessions, all-hands updates, or relationship-building calls where the explicit goal is social cohesion rather than operational output.",
+      "evidence_required": ["meeting transcript or summary", "list of claimed action items or decisions"],
+      "uncertainty_handling": "If the transcript is incomplete or ambiguous, state the uncertainty explicitly: 'Based on the available transcript, I can verify X elements but Y is unclear. The most conservative classification is UNRESOLVED.'"
+    },
+    {
+      "id": "rc-four-element-commitment-test",
+      "one_sentence": "Operational commitment exists only when all four elements are present and verifiable.",
+      "logic": [
+        "Element 1 — Choice: Was one option selected among alternatives? 'We discussed options' is not a choice. 'We chose option B' is.",
+        "Element 2 — Owner: Is a specific person named? 'The team will handle it' is not an owner. 'Maria will handle it' is.",
+        "Element 3 — Action: Is there something concrete to do? 'We need to improve communication' is not an action. 'Maria will schedule weekly 1:1s with each report' is.",
+        "Element 4 — Timing: Is there a deadline or checkpoint? 'Soon' is not timing. 'By March 15' is.",
+        "If any element is missing, the state is UNRESOLVED. If all four are present but gated by an external condition, the state is CONDITIONAL. If all four are present with no blockers and the owner has authority, the state is EXECUTABLE_DECISION."
+      ],
+      "so_what": "Without this test, agents conflate vague intentions with concrete commitments. The four-element test forces specificity and prevents the most common error in decision state judgment: mistaking discussion for commitment.",
+      "tradeoffs": "The test can feel rigid. Some agile teams use implicit ownership ('we all own it'). The agent should respect team conventions if they are documented, but default to explicit naming when conventions are unclear.",
+      "conflict_resolution": "When a user claims 'everyone knows who owns this,' the agent should respond: 'I cannot verify implicit knowledge. For decision state classification, I need explicit naming. Please confirm the owner or I will classify this as UNRESOLVED.'",
+      "when_not_to_use": "Do not apply the ownership element to collective responsibility contexts (e.g., emergency response, pair programming) where the team has pre-defined shared ownership protocols.",
+      "evidence_required": ["meeting output or summary", "action item list with owners and deadlines"],
+      "uncertainty_handling": "If the owner is named but their authority is unclear, classify as CONDITIONAL and flag the authority gap. Do not assume authority."
+    },
+    {
+      "id": "rc-deferral-vs-avoidance",
+      "one_sentence": "Structured deferral is a decision; vague deferral is avoidance — the difference is specificity.",
+      "logic": [
+        "Both structured and vague deferrals use language like 'we need more information' or 'let's revisit this.'",
+        "Structured deferral adds four specifics: what information, by when, who decides, and what interim action.",
+        "Vague deferral lacks at least one of these specifics — usually all four.",
+        "The same phrase can mean opposite states depending on specificity. 'Let's revisit' + date + owner = INTENTIONAL_DEFERRAL. 'Let's revisit' alone = UNRESOLVED.",
+        "The agent must parse the structure around the deferral language, not just the language itself."
+      ],
+      "so_what": "Teams and AI agents routinely mistake indefinite procrastination for strategic patience. The specificity test prevents this by forcing concrete plans. A deferral without specifics is not a strategy — it is a decision gap wearing strategic language.",
+      "tradeoffs": "Some decisions genuinely require open-ended exploration. Early-stage research or creative ideation may not have fixed deadlines. The agent should distinguish between exploration phases (where UNRESOLVED is correct) and execution phases (where deferral should be structured).",
+      "conflict_resolution": "When a user defends a vague deferral as 'strategic patience,' the agent should ask: 'What specific signal will tell you the wait is over, and who will act on that signal?' If the user cannot answer, the agent should maintain UNRESOLVED.",
+      "when_not_to_use": "Do not challenge open-ended research phases, creative exploration, or early-stage discovery where the explicit goal is generating possibilities rather than selecting among them.",
+      "evidence_required": ["deferral language in context", "presence or absence of condition, date, owner, and interim action"],
+      "uncertainty_handling": "If some elements are present but others are ambiguous, classify as the more conservative state. Missing date or owner always collapses INTENTIONAL_DEFERRAL to UNRESOLVED."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "version": "1.0-rc",
+    "domain": "decision_state",
+    "created": "2026-05-22",
+    "purpose": "Concrete cases demonstrating decision state judgment in practice.",
+    "load_condition": "Load when examples or demonstrations of decision state classification are requested."
+  },
+  "cases": [
+    {
+      "id": "case-001",
+      "title": "The cheerful standup that produced zero commitments",
+      "context": "A 30-minute weekly standup with 8 team members. Everyone reported progress, expressed optimism, and agreed the sprint was on track.",
+      "what_happened": "The meeting ended with 'great sync everyone, let's keep momentum.' No action items were recorded. Two days later, a critical integration dependency was discovered — no one had been assigned to verify it. The team had confused positive sentiment with operational commitment.",
+      "what_was_learned": "Social agreement ('everything sounds good') is not a decision state. The absence of conflict does not mean the presence of commitment. A meeting without named owners and deadlines is UNRESOLVED regardless of how positive it felt.",
+      "structural_pattern": "Social alignment masquerading as commitment — ms-social-agreement-not-commitment",
+      "judgment_path": "Detected positive sentiment → checked for four commitment elements → all absent → classified UNRESOLVED → flagged social-agreement misunderstanding",
+      "good_response": "This meeting produced discussion, not decisions. State: UNRESOLVED. No named owners or deadlines were established. I recommend scheduling a 10-minute follow-up to assign the integration verification owner and deadline.",
+      "bad_response": "Great meeting! The team is aligned and the sprint is on track. Keep up the good work.",
+      "why_good": "Explicitly names the decision state, identifies missing elements, and proposes a concrete recovery action.",
+      "why_bad": "Mistakes social alignment for progress. Fails to detect the missing commitment elements.",
+      "triggered_axioms": ["ax-discussion-not-decision", "ax-absence-not-commitment"]
+    },
+    {
+      "id": "case-002",
+      "title": "'Pending approval' that stayed pending for six weeks",
+      "context": "A product team proposed a pricing change. The meeting concluded with 'pending VP approval.' The project manager reported the decision as 'made, just waiting for sign-off.'",
+      "what_happened": "The VP was never explicitly named. The criteria for approval were undefined. No contingency was discussed. Six weeks later, the VP rejected the proposal because it conflicted with a quarterly initiative no one had checked. The 'pending approval' had masked an UNRESOLVED state.",
+      "what_was_learned": "'Pending approval' without explicit approver, criteria, and contingency is UNRESOLVED — not CONDITIONAL. The Condition Specificity Test must be applied: is the condition testable? Who verifies? What is the fallback? If any answer is missing, the state is UNRESOLVED.",
+      "structural_pattern": "Vague conditional language hiding unresolved state — MS-004",
+      "judgment_path": "Detected 'pending approval' → applied Condition Specificity Test → missing approver, criteria, contingency → classified UNRESOLVED → flagged conditional-language misunderstanding",
+      "good_response": "State: UNRESOLVED. 'Pending approval' lacks a named approver, acceptance criteria, and contingency plan. I recommend: (1) name the approver, (2) define approval criteria, (3) set a decision deadline, (4) draft a fallback if rejected.",
+      "bad_response": "The pricing decision has been made and is pending VP approval. We can start implementation planning.",
+      "why_good": "Correctly identifies the structural gap. Provides four concrete steps to move from UNRESOLVED to CONDITIONAL or EXECUTABLE.",
+      "why_bad": "Treats an unapproved proposal as a decided matter. Risks wasted implementation planning on a proposal that may be rejected.",
+      "triggered_axioms": ["ax-discussion-not-decision"]
+    },
+    {
+      "id": "case-003",
+      "title": "A proper intentional deferral",
+      "context": "A team discussing whether to migrate to a new database. They acknowledged they lacked performance benchmarks for their specific workload.",
+      "what_happened": "The team explicitly decided: (1) the DBA will run benchmarks against production-like data, (2) benchmarks will be ready by March 15, (3) the tech lead will decide on March 16 based on latency and throughput criteria, (4) if benchmarks show >20% improvement, migration proceeds; otherwise, they stay on the current system for another quarter. This was a valid INTENTIONAL_DEFERRAL.",
+      "what_was_learned": "Deferral is a decision, not a failure — when it is structured. All four elements of intentional deferral were present: specific information needed, deadline, decision owner, and interim action. The key distinction from UNRESOLVED is explicit structure.",
+      "structural_pattern": "Structured deferral with all four elements — intentional_deferral done correctly",
+      "judgment_path": "Detected deferral language → applied Deferral Validation → all four elements present → classified INTENTIONAL_DEFERRAL",
+      "good_response": "State: INTENTIONAL_DEFERRAL. This is a valid decision to decide later. All four elements are present: specific benchmarks needed, March 15 deadline, tech lead as decision owner, and a clear contingency. No further action needed until March 15.",
+      "bad_response": "The team couldn't decide on the database migration. They need more information. This is an unresolved issue.",
+      "why_good": "Correctly recognizes structured deferral as a valid decision state. Validates all four elements and confirms no action is needed until the checkpoint.",
+      "why_bad": "Fails to distinguish intentional deferral from UNRESOLVED. Misses that the team made a concrete plan.",
+      "triggered_axioms": ["ax-discussion-not-decision"]
+    },
+    {
+      "id": "case-004",
+      "title": "Executable decision with hidden authority gap",
+      "context": "A team assigned a junior developer to refactor the authentication module by Friday. The developer accepted. All four commitment elements appeared present.",
+      "what_happened": "On Thursday, the developer discovered the refactor required API changes that only senior engineers were authorized to make. The 'executable' decision was actually CONDITIONAL because the owner lacked authority. The team had skipped the authority-and-resources check.",
+      "what_was_learned": "EXECUTABLE_DECISION requires not just four elements but also that the owner has authority and resources. Without this check, CONDITIONAL decisions are misclassified as executable, leading to stalled work and frustrated owners.",
+      "structural_pattern": "Misclassified conditional as executable — missing authority check",
+      "judgment_path": "Detected four commitment elements → checked owner authority → authority insufficient → reclassified from EXECUTABLE_DECISION to CONDITIONAL → identified missing authorization as blocker",
+      "good_response": "State: CONDITIONAL, not EXECUTABLE. The assigned owner lacks authorization for API changes. Required action: identify who can approve API changes, add them as a condition, and set a deadline for authorization.",
+      "bad_response": "Executable decision: junior developer will refactor auth module by Friday. All elements are present.",
+      "why_good": "Applies the authority check and correctly reclassifies the decision. Prevents false executability.",
+      "why_bad": "Stops at the four-element checklist without verifying the owner can actually execute. Sets up the developer for failure.",
+      "triggered_axioms": ["ax-absence-not-commitment"]
+    }
+  ]
+}

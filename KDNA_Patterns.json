@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "0.4",
+    "version": "1.0-rc",
     "domain": "decision_state",
     "created": "2026-05-18",
     "purpose": "Language patterns and self-checks for decision state judgment.",
