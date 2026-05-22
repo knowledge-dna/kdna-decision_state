@@ -10,5 +10,6 @@
   "expected_banned_terms_avoided": [],
   "output_rubric": "Must classify as CONDITIONAL. Must acknowledge all four commitment elements are present. Must note the external condition (staging tests) and verify that condition specificity test passes.",
   "pass": null,
-  "evidence": "Proper conditional decision. All four elements present plus explicit condition, verifier, and contingency."
+  "evidence": "Proper conditional decision. All four elements present plus explicit condition, verifier, and contingency.",
+  "$schema": "https://aikdna.com/schemas/eval.schema.json"
 }

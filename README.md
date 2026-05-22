@@ -75,3 +75,12 @@ This KDNA helps agents diagnose **decision state** in:
 ## License
 
 CC BY 4.0 — attribution required, derivative judgment frameworks welcome.
+
+---
+
+## Install
+
+```bash
+kdna install @aikdna/decision_state
+kdna verify @aikdna/decision_state --judgment
+```

@@ -8,5 +8,6 @@
   "expected_banned_terms_avoided": [],
   "output_rubric": "Should decline to classify or state that decision state analysis does not apply to routine standups. Should not force a classification on a progress-update meeting.",
   "pass": null,
-  "evidence": "Boundary case. Daily standups are explicitly excluded by ax-discussion-not-decision does_not_apply_when."
+  "evidence": "Boundary case. Daily standups are explicitly excluded by ax-discussion-not-decision does_not_apply_when.",
+  "$schema": "https://aikdna.com/schemas/eval.schema.json"
 }

@@ -16,5 +16,6 @@
   ],
   "output_rubric": "Must classify as UNRESOLVED. Must identify missing commitment elements (no named owner, no specific action, no deadline). Must flag that social agreement is not operational commitment.",
   "pass": null,
-  "evidence": "Classic social-agreement case. No four commitment elements present."
+  "evidence": "Classic social-agreement case. No four commitment elements present.",
+  "$schema": "https://aikdna.com/schemas/eval.schema.json"
 }

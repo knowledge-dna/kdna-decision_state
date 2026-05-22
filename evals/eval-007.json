@@ -12,5 +12,6 @@
   "expected_banned_terms_avoided": [],
   "output_rubric": "Must classify as UNRESOLVED. Must identify that missing date and interim action prevent INTENTIONAL_DEFERRAL classification. Must flag that 'revisit' without a checkpoint date is not a structured deferral.",
   "pass": null,
-  "evidence": "Incomplete deferral case. Owner and condition are present but date and interim action are missing."
+  "evidence": "Incomplete deferral case. Owner and condition are present but date and interim action are missing.",
+  "$schema": "https://aikdna.com/schemas/eval.schema.json"
 }

@@ -12,5 +12,6 @@
   "expected_banned_terms_avoided": [],
   "output_rubric": "Must classify as INTENTIONAL_DEFERRAL. Must validate all four deferral elements: specific information needed (CRM requirements), deadline (March 15/18), decision owner (VP Sales), interim action (integration checklist).",
   "pass": null,
-  "evidence": "Proper intentional deferral. All four deferral structure elements present."
+  "evidence": "Proper intentional deferral. All four deferral structure elements present.",
+  "$schema": "https://aikdna.com/schemas/eval.schema.json"
 }

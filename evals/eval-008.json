@@ -10,5 +10,6 @@
   "expected_banned_terms_avoided": [],
   "output_rubric": "Must classify as EXECUTABLE_DECISION. Must verify all four commitment elements are present. Must confirm owner has authority and resources. No conditions or blockers remain.",
   "pass": null,
-  "evidence": "True executable decision. All four elements plus authority and resource confirmation."
+  "evidence": "True executable decision. All four elements plus authority and resource confirmation.",
+  "$schema": "https://aikdna.com/schemas/eval.schema.json"
 }

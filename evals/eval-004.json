@@ -12,5 +12,6 @@
   "expected_banned_terms_avoided": [],
   "output_rubric": "Must classify as UNRESOLVED or CONDITIONAL with a warning. Must identify that the condition lacks a verifier — who will check that legal approval is obtained? Must apply Condition Specificity Test.",
   "pass": null,
-  "evidence": "Conditional-with-missing-verifier case. Condition is present but verification ownership is absent."
+  "evidence": "Conditional-with-missing-verifier case. Condition is present but verification ownership is absent.",
+  "$schema": "https://aikdna.com/schemas/eval.schema.json"
 }

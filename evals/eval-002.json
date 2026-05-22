@@ -12,5 +12,6 @@
   "expected_banned_terms_avoided": [],
   "output_rubric": "Must classify as UNRESOLVED. Must identify that action items without owners and deadlines are a task list, not a decision. Must name the missing elements.",
   "pass": null,
-  "evidence": "Task-list-without-ownership case. Missing choice, owner, and timing."
+  "evidence": "Task-list-without-ownership case. Missing choice, owner, and timing.",
+  "$schema": "https://aikdna.com/schemas/eval.schema.json"
 }
