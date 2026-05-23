@@ -4,7 +4,8 @@
   "version": "0.7.5",
   "language": "en",
   "languages": [
-    "en"
+    "en",
+    "zh-CN"
   ],
   "created": "2026-05-18",
   "updated": "2026-05-18",
@@ -30,5 +31,7 @@
   "spec_version": "1.0-rc",
   "judgment_version": "2026.05",
   "signature": "ed25519:4fd02d46f968729b44772aed1d781bc76166bbde6eb513705c2874fc1d0bab340da139281fe19baa48232da56cd512aee28f7902e4feace1566b9d6a6131c206",
-  "quality_badge": "validated"
+  "quality_badge": "validated",
+  "default_language": "en",
+  "i18n_level": "L2"
 }
