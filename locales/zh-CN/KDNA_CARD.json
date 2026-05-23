@@ -1,0 +1,15 @@
+{
+  "locale": "zh-CN",
+  "base": "en",
+  "name": "@aikdna/decision_state",
+  "display_name": "决策状态判断",
+  "summary": "判断一次会议或讨论是否产生了可执行的决策——而不只是讨论。",
+  "intended_use": ["判断会议产出", "区分讨论与决策", "追踪决策责任归属"],
+  "out_of_scope": ["会议效率评估", "决策质量评估", "项目管理系统替代"],
+  "known_limitations": ["假定会议有明确的议程和参与者", "不适用于非正式讨论或头脑风暴"],
+  "risk_warnings": ["可能将创造性讨论误判为低效决策"],
+  "human_lock_summary": { "locked_by": "KDNA Team" },
+  "quality_badge": "tested",
+  "review_status": "community",
+  "license": "CC-BY-4.0"
+}
