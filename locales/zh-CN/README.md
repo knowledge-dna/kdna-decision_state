@@ -18,4 +18,4 @@
 - 决策质量评审
 - 项目管理系统替代
 
-详见英文原版：[README.md](https://github.com/knowledge-dna/kdna-decision_state)
+详见英文原版：[README.md](https://github.com/aikdna/kdna-decision_state)
