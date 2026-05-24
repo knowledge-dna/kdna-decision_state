@@ -1,7 +1,7 @@
 # kdna-decision_state
 
-[![KDNA Spec](https://img.shields.io/badge/KDNA-v1.0--rc-4c1)](https://github.com/knowledge-dna/KDNA)
-[![Trust](https://img.shields.io/badge/scope-%40aikdna-blue)](https://github.com/knowledge-dna/kdna-registry)
+[![KDNA Spec](https://img.shields.io/badge/KDNA-v1.0--rc-4c1)](https://github.com/aikdna/KDNA)
+[![Trust](https://img.shields.io/badge/scope-%40aikdna-blue)](https://github.com/aikdna/kdna-registry)
 
 **Decision state judgment** — classify whether a discussion produced an actionable decision using the four-element commitment test. Not a meeting summarizer.
 
