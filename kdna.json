@@ -1,5 +1,5 @@
 {
-  "kdna_spec": "1.0",
+  "kdna_spec": "1.0-rc",
   "name": "@aikdna/decision_state",
   "version": "0.7.5",
   "language": "en",
@@ -10,7 +10,15 @@
   "created": "2026-05-18",
   "updated": "2026-05-18",
   "description": "Judge whether a meeting, discussion, or planning session has produced an actionable decision — or just discussion. Helps AI agents distinguish progress from the appearance of progress.",
-  "keywords": ["decision", "consensus", "voting", "governance", "meeting", "decision-making", "outcome"],
+  "keywords": [
+    "decision",
+    "consensus",
+    "voting",
+    "governance",
+    "meeting",
+    "decision-making",
+    "outcome"
+  ],
   "access": "open",
   "author": {
     "name": "KDNA Team",
@@ -20,20 +28,14 @@
   },
   "license": {
     "type": "CC-BY-4.0",
-    "url": "https://creativecommons.org/licenses/by/4.0/",
-    "allow_agent_use": true,
-    "allow_redistribution": true,
-    "allow_training": false
+    "url": "https://creativecommons.org/licenses/by/4.0/"
   },
   "status": "experimental",
-  "registry": {
-    "repo": "https://github.com/aikdna/kdna-decision_state"
-  },
   "file_count": 6,
-  "spec_version": "1.0-rc",
   "judgment_version": "2026.05",
   "signature": "ed25519:4fd02d46f968729b44772aed1d781bc76166bbde6eb513705c2874fc1d0bab340da139281fe19baa48232da56cd512aee28f7902e4feace1566b9d6a6131c206",
-  "quality_badge": "validated",
+  "quality_badge": "tested",
   "default_language": "en",
-  "i18n_level": "L2"
+  "i18n_level": "L2",
+  "risk_level": "R1"
 }
