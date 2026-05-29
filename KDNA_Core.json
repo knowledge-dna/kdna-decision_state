@@ -29,7 +29,18 @@
       "evidence_type": [
         "practice_pattern",
         "industry_consensus"
-      ]
+      ],
+      "status": "locked",
+      "human_lock": {
+        "by": "KDNA Team",
+        "at": "2026-05-29",
+        "statement": "Reviewed and locked for official decision_state asset republish. Applies_when, does_not_apply_when, and failure_risk are intentional judgment boundaries.",
+        "checked": {
+          "applies_when": true,
+          "does_not_apply_when": true,
+          "failure_risk": true
+        }
+      }
     },
     {
       "id": "ax-absence-not-commitment",
@@ -53,7 +64,18 @@
       "evidence_type": [
         "case_observation",
         "industry_consensus"
-      ]
+      ],
+      "status": "locked",
+      "human_lock": {
+        "by": "KDNA Team",
+        "at": "2026-05-29",
+        "statement": "Reviewed and locked for official decision_state asset republish. Applies_when, does_not_apply_when, and failure_risk are intentional judgment boundaries.",
+        "checked": {
+          "applies_when": true,
+          "does_not_apply_when": true,
+          "failure_risk": true
+        }
+      }
     }
   ],
   "ontology": [

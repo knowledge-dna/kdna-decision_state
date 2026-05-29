@@ -1,15 +1,18 @@
 {
-  "kdna_spec": "1.0-rc",
+  "format": "kdna",
+  "format_version": "1.0",
+  "spec_version": "1.0-rc",
   "name": "@aikdna/decision_state",
-  "version": "0.7.5",
-  "language": "en",
-  "languages": [
-    "en",
-    "zh-CN"
-  ],
+  "version": "0.7.6",
+  "asset_type": "domain_judgment",
+  "status": "experimental",
+  "access": "open",
+  "privacy_level": "public",
+  "media_type": "application/vnd.aikdna.kdna+zip",
   "created": "2026-05-18",
-  "updated": "2026-05-18",
+  "updated": "2026-05-29",
   "description": "Judge whether a meeting, discussion, or planning session has produced an actionable decision — or just discussion. Helps AI agents distinguish progress from the appearance of progress.",
+  "core_insight": "Discussion is not decision. Broad agreement is not commitment.",
   "keywords": [
     "decision",
     "consensus",
@@ -19,7 +22,6 @@
     "decision-making",
     "outcome"
   ],
-  "access": "open",
   "author": {
     "name": "KDNA Team",
     "id": "kdna-team",
@@ -30,12 +32,41 @@
     "type": "CC-BY-4.0",
     "url": "https://creativecommons.org/licenses/by/4.0/"
   },
-  "status": "experimental",
+  "registry": {
+    "repo": "https://github.com/aikdna/kdna-decision_state"
+  },
   "file_count": 6,
   "judgment_version": "2026.05",
-  "signature": "ed25519:4fd02d46f968729b44772aed1d781bc76166bbde6eb513705c2874fc1d0bab340da139281fe19baa48232da56cd512aee28f7902e4feace1566b9d6a6131c206",
   "quality_badge": "tested",
+  "languages": [
+    "en",
+    "zh-CN"
+  ],
   "default_language": "en",
   "i18n_level": "L2",
-  "risk_level": "R1"
+  "risk_level": "R1",
+  "fitness_for_purpose": {
+    "intended_use": [
+      "meeting transcript review",
+      "project update actionability assessment",
+      "decision and commitment classification"
+    ],
+    "not_for": [
+      "legal interpretation of consent",
+      "employment performance review",
+      "automated assignment of accountability without human confirmation"
+    ],
+    "requires_human_review_when": [
+      "the classification will be used to assign work to named people",
+      "the meeting context includes formal governance, legal, or compliance rules",
+      "team policy treats silence, RFC timeout, or on-call handoff as explicit approval"
+    ],
+    "known_failure_modes": [
+      "over-classifying routine status updates as unresolved decisions",
+      "missing domain-specific governance rules where silence has formal meaning",
+      "treating social alignment as operational commitment"
+    ]
+  },
+  "content_digest": "sha256:a98d376520a2637eb6783ee4cf902d556edd0abb673a613eeba710eaab06f2a8",
+  "signature": "ed25519:6f6fccb7b484df4d8780c40008841a8087fb91c36ef370686fca51e4bfc1c8c54f367fd908bd775aab1423d85818a015c7e1dc946403d49e71b79a04dec4c909"
 }
